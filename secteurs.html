@@ -1,0 +1,63 @@
+<div class="row ng-cloak" ng-cloak>
+  <div class="col-md-12 ">
+    <div class="container">
+      <div class="row">
+        <section name="year_selector" class="col-md-3">
+          <div class='form-inline form-horizontal '>
+            <span for="year_code" class="label label-default">Choose Year</span>
+
+           <select class='form-control' ng-model="year_code.year" ng-change="getSecteursPerYear(year_code.year)">
+              <option value="">Pick a Year</option>
+            <option ng-repeat="year in years" ng-selected="year.year == year_code.year" value="{{year.year}}">{{year.year}}</option>
+           </select>
+
+          </div>
+        </section>
+        <section name="year_selector" class="col-md-6">
+          <div class='form-inline form-horizontal '>
+            <span for="secteur_id" class="label label-default">Choose Sector</span>
+
+           <select class='form-control' ng-model="secteur_id" ng-change="getSecteursById(secteur_id)">
+             <option value="">Pick a Sector</option>
+            <option ng-repeat="secteur in secteurs" ng-selected="secteur_id == secteur.id" value="{{secteur.id}}">{{secteur.name}}</option>
+           </select>
+
+          </div>
+        </section>
+    </div>
+      <hr>
+  </div>
+  </div>
+
+
+  <div class="col-md-6">
+     <div id="container" style="min-width: 310px; height: 500px; margin: 0 auto"></div>
+     <!--<div id="columnchart_material" style=" height: 500px;"></div>-->
+  </div>
+  <div class="col-md-6 ">
+    <!-- <div id="columnchart_material" style=" height: 500px;"></div> -->
+     <div id="chartsect" style="min-width: 310px; height: 500px; margin: 0 auto"></div>
+  </div>
+<div class="col-md-12">
+  <div class="row">
+    <div class="col-md-6">
+      <section name="year_selector" class="col-md-6">
+        <div class='form-inline form-horizontal '>
+          <span for="year_code" class="label label-default">Choose Year</span>
+
+          <select class='form-control' ng-model="code" ng-change="getAll(code)">
+            <option value="">Pick a Year</option>
+           <option ng-repeat="year in years" ng-selected="code == year.year" value="{{year.year}}">{{year.year}}</option>
+          </select>
+
+
+        </div>
+      </section>
+  </div>
+  <div class="col-md-12">
+   <div id="newchart" style="min-width: 900px; height: 500px; margin: 0 auto"></div>
+ </div>
+</div>
+</div>
+
+</div>
